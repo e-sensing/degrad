@@ -1,2 +1,2 @@
 # degrad
-Tropical degradation studies
+Studies in forest degradation using image time series

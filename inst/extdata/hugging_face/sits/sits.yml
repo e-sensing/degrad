@@ -1,0 +1,90 @@
+# sits collection definition of a HuggingFace dataset.
+#
+# Place this file in the 'sits' directory of the dataset repository,
+# naming the images as sits names them, and open the dataset with:
+#
+#     sits_from_hf(
+#         repo       = "<user>/<repository>",
+#         output_dir = "<directory>"
+#     )
+#
+# Declare only the bands shared in the dataset.
+# Written by sits from SENTINEL-2-16D.
+
+satellite: SENTINEL-2
+sensor: MSI
+grid_system: BDC_SM_V2
+dates: 2023 to 2025
+bands:
+    B02:
+        band_name: B02
+        missing_value: -9999
+        minimum_value: -1000
+        maximum_value: 10000
+        scale_factor: 0.0001
+        offset_value: 0
+        resolution: 10.0
+        data_type: INT2S
+    B03:
+        band_name: B03
+        missing_value: -9999
+        minimum_value: -1000
+        maximum_value: 10000
+        scale_factor: 0.0001
+        offset_value: 0
+        resolution: 10.0
+        data_type: INT2S
+    B04:
+        band_name: B04
+        missing_value: -9999
+        minimum_value: -1000
+        maximum_value: 10000
+        scale_factor: 0.0001
+        offset_value: 0
+        resolution: 10.0
+        data_type: INT2S
+    B08:
+        band_name: B08
+        missing_value: -9999
+        minimum_value: -1000
+        maximum_value: 10000
+        scale_factor: 0.0001
+        offset_value: 0
+        resolution: 10.0
+        data_type: INT2S
+    B11:
+        band_name: B11
+        missing_value: -9999
+        minimum_value: -1000
+        maximum_value: 10000
+        scale_factor: 0.0001
+        offset_value: 0
+        resolution: 10.0
+        data_type: INT2S
+    CLOUD:
+        bit_mask: false
+        band_name: CLOUD
+        values:
+            '0': missing_data
+            '1': defective pixel
+            '2': shadows
+            '3': cloud shadows
+            '4': vegetation
+            '5': non-vegetated
+            '6': water
+            '7': unclassified
+            '8': cloud medium
+            '9': cloud high
+            '10': thin cirrus
+            '11': snow or ice
+        interp_values:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 8
+        - 9
+        - 10
+        resolution: 10.0
+        data_type: INT1U
+
